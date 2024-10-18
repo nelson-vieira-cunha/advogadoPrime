@@ -2,7 +2,7 @@
 
 .intro{
     height: 100vh;
-    background-color: #c4c4c4;
+    max-height: 1080px;
     display: flex;
     gap: 2rem;
     .description{
@@ -18,6 +18,9 @@
 }
 .progress_bar{
     max-width: 625px;
+}
+.progress_container{
+    padding-top: 40px;
 }
 .fixed{
     position: fixed;

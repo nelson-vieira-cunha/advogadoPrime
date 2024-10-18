@@ -64,8 +64,8 @@ export default function Intro() {
                     <Button>Garanta sua vaga agora</Button>
                 </div>
 
-                <div className="progress-container">
-                    <div className={`${styles.progress_container} progress-content`}>
+                <div className={`${styles.progress_container} progress-container`}>
+                    <div className={`${styles.progress_content} progress-content`}>
                         <ProgressBar
                             className={styles.progress_bar}
                             actualProgress={20}

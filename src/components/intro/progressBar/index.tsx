@@ -1,6 +1,5 @@
 'use client'
 
-import { useCallback } from 'react'
 // CSS
 import styles from './index.module.scss'
 
@@ -36,7 +35,7 @@ export default function ProgressBar({
         return actualProgress
     }
 
-    const getDate = useCallback((batch: number | undefined) => {
+    const getDate = (batch: number | undefined) => {
         switch (batch) {
         case 1:
             return '25 de outubro'
@@ -47,7 +46,7 @@ export default function ProgressBar({
         default:
             break
         }
-    }, [batch])
+    }
 
     return (
         <div className={`${styles.progress_container} ${className}`}>

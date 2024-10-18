@@ -1,5 +1,9 @@
 @import '@/styles/variables';
 
+body{
+    background: linear-gradient(90deg, #232334 7%, #2F2D4D 96%);
+    color: #fff;
+}
 h1{
     font-size: 40px;
     font-weight: 700;
