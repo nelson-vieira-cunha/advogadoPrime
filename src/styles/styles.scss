@@ -1,0 +1,29 @@
+@import '@/styles/variables';
+
+h1{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    max-width: 752px;
+    width: 100%;
+}
+
+h2{
+    line-height: 40px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+h1, h2, h3, h4{
+    color: $color-highlight
+}
+
+.text-center{
+    text-align: center;
+}
+
+.container{
+    max-width: 1216px;
+    width: calc(100% - 25px);
+    margin: auto;
+}

@@ -1,0 +1,34 @@
+@import '@/styles/toRem';
+
+.intro{
+    height: 100vh;
+    background-color: #c4c4c4;
+    display: flex;
+    gap: 2rem;
+    .description{
+        max-width: 570px;
+        width: 100%;
+        margin: 24px 0;
+    }
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 96px
+}
+.progress_bar{
+    max-width: 625px;
+}
+.fixed{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(280.72deg, rgba(45, 39, 133, 0.4) 7.96%, rgba(11, 9, 31, 0.4) 57.3%);
+    color: #fff;
+    .progress_bar{
+        max-width: 1216px;
+        margin: auto;
+        padding: 30px;
+    }
+}

@@ -1,0 +1,23 @@
+@import '@/styles/variables';
+
+.about{
+    padding: 96px 0;
+    background-color: #aa8b8b;
+    .container{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .content{
+        max-width: 490px;
+        h2{
+            margin-bottom: 24px;
+        }
+        p{
+            margin-bottom: 16px;
+            color: $color-ice-white;
+        }
+        .btn{
+            margin-top: 8px;
+        }
+    }
+}
