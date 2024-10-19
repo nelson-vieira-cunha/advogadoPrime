@@ -25,14 +25,14 @@
         }
     }
     &::before{
-        content: '';
+        content: "";
         width: 100%;
-        height: calc(100% - 192px);
-        background: #18163b;
-        background: linear-gradient(90deg,  #121119 70%,#0b0a32 30%);
+        height: calc(100%);
+        background: linear-gradient(90deg, #18171f 70%, #0b0a32 30%);
         left: 0;
         z-index: -1;
         position: absolute;
+        top: 0;
     }
     .description{
         max-width: 570px;
