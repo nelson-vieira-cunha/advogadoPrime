@@ -1,4 +1,6 @@
+import ScrollTo from "@/util/scrollTo.util"
 import Image from "next/image"
+import { RefObject } from "react"
 import Button from "../ui/button"
 import PlayIcon from "../ui/play-circle"
 import styles from "./index.module.scss"
@@ -6,9 +8,11 @@ import styles from "./index.module.scss"
 type Props = {
     setYouTubeId: (id: string) => void
     setOpen: (value: boolean) => void
+    spot: RefObject<HTMLDivElement>
 }
 
 export default function Record({
+    spot,
     setYouTubeId,
     setOpen
 }: Props) {
@@ -19,7 +23,7 @@ export default function Record({
 
                 <div className={styles.content}>
                     <h2>Grave Direito: <br />Transforme Sua Advocacia <br />e Conquiste o Mundo Digital!</h2>
-                    <Button className={styles.btn}>Garanta sua vaga agora</Button>
+                    <Button className={styles.btn} onClick={() => ScrollTo(spot)}>Garanta sua vaga agora</Button>
                 </div>
 
                 <div 

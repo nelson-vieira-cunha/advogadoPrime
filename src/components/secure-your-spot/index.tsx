@@ -1,8 +1,14 @@
 import { formatCurrency } from "@/util/currency";
+import { RefObject } from "react";
 import Button from "../ui/button";
 import styles from "./index.module.scss";
 
-export default function SecureYourSpot() {
+type Props = {
+    spot: RefObject<HTMLDivElement>
+}
+
+
+export default function SecureYourSpot({spot}: Props) {
 
     const items = [
         {
@@ -53,7 +59,7 @@ export default function SecureYourSpot() {
     };
 
     return (
-        <section className={styles.content}>
+        <section ref={spot} className={styles.content}>
             <div className={`container`}>
 
                 <h2 className="text-center">Garanta já sua vaga</h2>
@@ -78,7 +84,7 @@ export default function SecureYourSpot() {
                                             {isUpcoming ? (
                                                 <h3 className={styles.title}>Inicia em {formatDate(item.startedAt)}</h3>
                                             ) : (
-                                                <h3 className={styles.title}>Até dia {formatDate(item.endedAt)}</h3>
+                                                <h3 className={styles.title}>Esgotado</h3>
                                             )}
                                         </>
                                     )}
@@ -102,7 +108,7 @@ export default function SecureYourSpot() {
                                         {isUpcoming ? (
                                             <Button>Em breve</Button>
                                         ) : (
-                                            <Button>Encerrado</Button>
+                                            <Button>Esgotado</Button>
                                         )}
                                     </>
                                 )}

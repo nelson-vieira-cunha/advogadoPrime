@@ -1,7 +1,13 @@
+import ScrollTo from "@/util/scrollTo.util"
+import { RefObject } from "react"
 import Button from "../ui/button"
 import styles from "./index.module.scss"
 
-export default function About() {
+type Props = {
+    spot: RefObject<HTMLDivElement>
+}
+
+export default function About({spot}: Props) {
 
     return (
         <section className={styles.about}>
@@ -12,7 +18,7 @@ export default function About() {
                     
                     <p>O evento é organizado pelo Professor Renato Saraiva, referência em educação jurídica no Brasil, que agora lidera o Grave Direito para ajudar advogados a conquistarem seu espaço no mundo digital.</p>
                     <p>Garanta já sua vaga e aprenda a dominar a produção de vídeos para transformar sua advocacia!</p>
-                    <Button className={styles.btn}>Garanta sua vaga agora</Button>
+                    <Button className={styles.btn} onClick={() => ScrollTo(spot)}>Garanta sua vaga agora</Button>
                 </div>
 
             </div>

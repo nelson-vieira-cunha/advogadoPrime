@@ -57,9 +57,19 @@
     background: linear-gradient(280.72deg, rgba(45, 39, 133, 0.4) 7.96%, rgba(11, 9, 31, 0.4) 57.3%);
     color: #fff;
     z-index: 5;
+    animation: example 600ms forwards;
     .progress_bar{
         max-width: 1216px;
         margin: auto;
         padding: 30px;
+    }
+}
+
+@keyframes example {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

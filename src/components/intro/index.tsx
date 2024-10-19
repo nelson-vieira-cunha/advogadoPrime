@@ -1,11 +1,16 @@
 'use client'
 
-import { useEffect } from "react";
+import ScrollTo from "@/util/scrollTo.util";
+import { RefObject, useEffect } from "react";
 import Button from "../ui/button";
 import styles from "./index.module.scss";
 import ProgressBar from "./progressBar";
 
-export default function Intro() {
+type Props = {
+    spot: RefObject<HTMLDivElement>
+}
+
+export default function Intro({spot}: Props) {
 
     useEffect(() => {
         setTimeout(() => {
@@ -38,7 +43,7 @@ export default function Intro() {
                         Como se Tornar um Advogado Prime
                     </h1>
                     <p className={styles.description}>Um evento premium e transformador, organizado pelo renomado Professor Renato Saraiva, que te ensinará a produzir conteúdo em vídeo para atrair uma audiência qualificada e construir autoridade no mercado jurídico.</p>
-                    <Button>Garanta sua vaga agora</Button>
+                    <Button onClick={() => ScrollTo(spot)}>Garanta sua vaga agora</Button>
                 </div>
 
                 <div className={`${styles.progress_container} progress-container`}>

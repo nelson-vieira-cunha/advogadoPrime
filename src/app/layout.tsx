@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from 'next/script';
 
 import "@/styles/reset.css";
 import "@/styles/styles.scss";
@@ -21,15 +20,8 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pt-BR">
-            <body
-                className={`${inter.className}`}
-            >
+            <body className={`${inter.className}`}>
                 {children}
-
-                <Script
-                src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/d1fad250-e2eb-4fbc-bb81-d75f880c475b-loader.js"
-                strategy="lazyOnload"
-            />
             </body>
         </html>
     )
