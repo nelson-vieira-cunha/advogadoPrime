@@ -8,7 +8,7 @@
     max-width: 1216px;
     margin: auto;
     position: relative;
-    background: linear-gradient(0deg, #242432, #242432);
+    background: linear-gradient(135deg,  #1a192a 25%,#282553 100%);
     top: -170px;
     z-index: 3;
 
@@ -16,6 +16,8 @@
         position: relative;
         z-index: 2;
         display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .content{
         max-width: 450px;
@@ -29,6 +31,30 @@
         }
         .btn{
             margin-top: 8px;
+        }
+    }
+    .video{
+        cursor: pointer;
+        position: relative;
+        transform: scale(1);
+        transition: all 250ms ease;
+        .play{
+            transition: all 500ms ease;
+            transform: scale(1);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transform: translateY(-50%);
+        }
+        &:hover{
+            transform: scale(1.02);
+            .play{
+                transition: all 500ms ease;
+                top: 52%;
+                transform: scale(1.2) translateY(-50%);
+            }
         }
     }
 }

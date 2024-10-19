@@ -2,16 +2,25 @@
 @import '@/styles/toRem';
 
 .btn {
-    width: 267px;
-    height: 48px;
-    padding: 12px 24px;
+    // width: 267px;
+    // height: 48px;
+    gap: 1rem;
+    padding: 16px 24px;
     border: none;
     border-radius: 6px;
-    opacity: 0px;
     background: $color-highlight;
     cursor: pointer;
     font-size: toRem(16px);
     font-weight: 700;
+    transition: all 250ms ease;
+    display: inline-block;
+    box-sizing: border-box;
+    color: #24242F;
+    text-decoration: none;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     &:hover {
         opacity: 0.85;

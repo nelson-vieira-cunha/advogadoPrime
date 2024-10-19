@@ -1,48 +1,114 @@
-import styles from "./index.module.scss"
+import { formatCurrency } from "@/util/currency";
+import Button from "../ui/button";
+import styles from "./index.module.scss";
 
 export default function SecureYourSpot() {
 
     const items = [
         {
-            title: 'Empreendedorismo Jurídico',
-            description: 'Como se destacar na web e redes sociais com o seu conteúdo',
-            icon: ''
+            batch: 1,
+            startedAt: '2024-10-10 00:00:00',
+            endedAt: '2024-10-25 00:00:00',
+            oldPrice: 600,
+            promotionPrice: 600,
+            url: 'https://www.cers.com.br/curso/curso-trt-se-analista-judiciario',
         },
         {
-            title: 'Produção de vídeos com o celular',
-            description: 'Técnicas práticas e avançadas para criar vídeos profissionais que conectam, informam e atraem clientes potenciais. Não importa se você é iniciante; vamos te mostrar como criar vídeos impactantes com o que você já tem em mãos.',
-            icon: ''
+            batch: 2,
+            startedAt: '2024-10-26 00:00:00',
+            endedAt: '2024-11-01 00:00:00',
+            oldPrice: 680,
+            promotionPrice: 680,
+            url: 'https://www.cers.com.br/curso/curso-trt-se-analista-judiciario',
         },
         {
-            title: 'Conteúdo que gera resultados',
-            description: 'Descubra como produzir vídeos que vendem sua advocacia de forma sutil e efetiva, gerando engajamento e conversão nas redes sociais.',
-            icon: ''
-        },
-        {
-            title: 'Instagram para advogados',
-            description: 'Estratégias para se destacar no Instagram, aumentando seu alcance e interação com um público que valoriza seus serviços. Aprenda a transformar seguidores em clientes de alto valor.',
-            icon: ''
-        },
-        {
-            title: 'Automação e inteligência artificial',
-            description: 'Ferramentas e técnicas para automatizar sua produção de conteúdo em vídeo, otimizando seu tempo e mantendo uma presença ativa e relevante nas redes.',
-            icon: ''
+            batch: 3,
+            startedAt: '2024-11-01 00:00:00',
+            endedAt: '2024-11-05 00:00:00',
+            oldPrice: 800,
+            promotionPrice: 800,
+            url: 'https://www.cers.com.br/curso/curso-trt-se-analista-judiciario',
         },
     ]
+
+    const formatDate = (dateStr: string) => {
+        const date = new Date(dateStr);
+        return date.toLocaleDateString('pt-BR', {
+            day: '2-digit',
+            month: 'long'
+        });
+    };
+
+    const isDateInRange = (startedAt: string, endedAt: string) => {
+        const now = new Date();
+        const startDate = new Date(startedAt);
+        const endDate = new Date(endedAt);
+        return now >= startDate && now <= endDate;
+    };
+
+    const isDateUpcoming = (startedAt: string) => {
+        const now = new Date();
+        const startDate = new Date(startedAt);
+        return now < startDate;
+    };
 
     return (
         <section className={styles.content}>
             <div className={`container`}>
 
-                <h2 className="text-center">O que você vai aprender</h2>
+                <h2 className="text-center">Garanta já sua vaga</h2>
                 
                 <ul className={styles.cards_list}>
-                    {items.map((item, index) => (
-                        <li className={styles.card} key={index}>
-                            <h3 className={styles.card_title}>{item.title}</h3>
-                            <p className={styles.card_description}>{item.description}</p>
-                        </li>
-                    ))}
+                    {items.map((item, index) => {
+                        const isActive = isDateInRange(item.startedAt, item.endedAt);
+                        const isUpcoming = isDateUpcoming(item.startedAt);
+
+                        return (
+                            <li 
+                                className={`${styles.card} ${!isActive ? styles.card_disabled : ''}`} 
+                                key={index}
+                            >
+                                <div className={styles.title_container}>
+                                    <small>Lote 0{item.batch}</small>
+
+                                    {isActive ? (
+                                        <h3 className={styles.title}>Até dia {formatDate(item.endedAt)}</h3>
+                                    ) : (
+                                        <>
+                                            {isUpcoming ? (
+                                                <h3 className={styles.title}>Inicia em {formatDate(item.startedAt)}</h3>
+                                            ) : (
+                                                <h3 className={styles.title}>Até dia {formatDate(item.endedAt)}</h3>
+                                            )}
+                                        </>
+                                    )}
+
+                                </div>
+
+                                <div className={styles.price_container}>
+                                    <small className={styles.old_price}>de {formatCurrency(item.oldPrice)}</small>
+                                    <span className={styles.promotion_price}>
+                                        <small>por</small> {formatCurrency(item.promotionPrice)}
+                                    </span>
+                                    <span className={styles.installment}>em até 12x R$ 75,00</span>
+                                </div>
+
+                                {isActive ? (
+                                    <Button target="_blank" url={item.url}>
+                                        {isActive ? 'Compre com desconto' : 'Promoção encerrada'}
+                                    </Button>
+                                ) : (
+                                    <>
+                                        {isUpcoming ? (
+                                            <Button>Em breve</Button>
+                                        ) : (
+                                            <Button>Encerrado</Button>
+                                        )}
+                                    </>
+                                )}
+                            </li>
+                        );
+                    })}
                 </ul>
 
             </div>

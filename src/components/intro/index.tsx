@@ -22,29 +22,6 @@ export default function Intro() {
                     }
                 }
             })
-
-            const sections = document.querySelectorAll('section')
-            const navLi = document.querySelectorAll('.nav-bar ul li')
-
-            window.addEventListener('scroll', () => {
-                let current = ''
-                sections.forEach((section) => {
-                    const sectionTop = section.offsetTop
-                    if (window.pageYOffset >= sectionTop - 290) {
-                        current = `${section.getAttribute('id')}`
-                    }
-                })
-
-                navLi.forEach((li) => {
-                    li.classList.remove('active')
-                    li.classList.remove('theme-color')
-                    if (li.classList.contains(current)) {
-                        li.classList.add('active')
-                        li.classList.add('theme-color')
-                    }
-                })
-
-            })
         }, 1000)
 
     }, [])

@@ -3,11 +3,11 @@ import Script from 'next/script';
 
 import "@/styles/reset.css";
 import "@/styles/styles.scss";
-// import "slick-carousel/slick/slick-theme.css";
-// import "slick-carousel/slick/slick.css";
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 
 import { Inter } from "next/font/google";
-const inter = Inter({ weight: ["400", "500", "700"], subsets: ["latin"] })
+const inter = Inter({ weight: ["300", "400", "500", "700"], subsets: ["latin"] })
 
 export const metadata: Metadata = {
     title: "Workshop Imersivo",

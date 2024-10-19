@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import ArrowRightIcon from '../arrow-right'
 import styles from './index.module.scss'
 
 type Button = {
@@ -6,14 +7,12 @@ type Button = {
     children: ReactNode
     target?: string
     url?: string
-    type?: 'button' | 'link' | undefined
-    onClick?: (e: any) => any
+    onClick?: () => void
 }
 
 export default function Button({
     className,
     onClick,
-    type,
     target,
     url,
     ...props
@@ -23,14 +22,16 @@ export default function Button({
 
     return (
         <>
-            {type && type == 'link' ? (
+            {url ? (
                 <a href={url} rel="noreferrer" target={target} className={classNames} {...props}>
                     {props.children}
+                    <ArrowRightIcon />
                 </a>
 
             ) : (
                 <button type="button" className={classNames} onClick={onClick} {...props} >
                     {props.children}
+                    <ArrowRightIcon />
                 </button>
             )}
         </>
