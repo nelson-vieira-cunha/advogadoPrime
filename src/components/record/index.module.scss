@@ -15,12 +15,24 @@
     .container{
         position: relative;
         z-index: 2;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        @media(max-width: 1024px){
+            // text-align: center;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: 1fr;
+        }
     }
     .content{
         max-width: 450px;
+        @media(max-width: 1024px){
+            margin: auto;
+        }
         h2{
             margin-bottom: 24px;
             line-height: 48px;
@@ -31,6 +43,10 @@
         }
         .btn{
             margin-top: 8px;
+            @media(max-width: 1024px){
+                // margin: auto;
+                margin-top: 8px;
+            }
         }
     }
     .video{
@@ -38,6 +54,16 @@
         position: relative;
         transform: scale(1);
         transition: all 250ms ease;
+        @media(max-width: 1024px){
+            max-width: 592px;
+            width: 100%;
+            margin: auto;
+            margin-top: 32px;
+        }
+        .cover{
+            width: 100%;
+            height: auto;
+        }
         .play{
             transition: all 500ms ease;
             transform: scale(1);

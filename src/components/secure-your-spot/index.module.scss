@@ -7,11 +7,14 @@
     }
 }
 .cards_list{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    // grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     gap: 35px;
     margin: auto;
+    @media(max-width: 1024px){
+        flex-wrap: wrap;
+    }
     .card{
         display: flex;
         flex-direction: column;
@@ -21,12 +24,16 @@
         border-bottom-right-radius: 32px;
         padding: 48px 40px;
     }
+    .card_container{
+        flex: 1
+    }
     .card_disabled{
         opacity: 0.4;
     }
     .title_container{
         color: $color-highlight;
         font-weight: 600;
+        margin-bottom: 1rem;
         .title{
             font-size: 24px;
         }

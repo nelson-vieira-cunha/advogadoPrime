@@ -12,6 +12,11 @@
     gap: 35px;
     max-width: 1000px;
     margin: auto;
+    @media(max-width: 1024px){
+        grid-template-columns: 1fr;
+        justify-content: center;
+        // text-align: center;
+    }
     .card{
         border: 3px solid #2F2D4D;
         border-top-left-radius: 32px;
@@ -19,6 +24,9 @@
         padding: 48px 40px;
         &:last-child{
             grid-column: 1 / span 2;
+            @media(max-width: 1024px){
+                grid-column: 1 / span 1;
+            }
         }
         .card_title{
             color: $color-highlight;

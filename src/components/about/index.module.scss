@@ -5,6 +5,9 @@
     position: relative;
     min-height: 915px;
     display: flex;
+    @media(max-width: 1024px){
+        min-height: 500px;
+    }
     &:before{
         content: '';
         position: absolute;
@@ -16,6 +19,9 @@
         z-index: 1;
         top: 0;
         left: 0;
+        @media(max-width: 1024px){
+            opacity: 0.7;
+        }
     }
     .container{
         position: relative;
@@ -23,6 +29,10 @@
         display: flex;
         justify-content: flex-end;
         top: -90px;
+        @media(max-width: 1024px){
+            // justify-content: center;
+            // text-align: center;
+        }
     }
     .content{
         max-width: 490px;
@@ -34,7 +44,11 @@
             color: $color-ice-white;
         }
         .btn{
-            margin-top: 8px;
+            margin-top: 24px;
+            @media(max-width: 1024px){
+                // margin: auto;
+                margin-top: 32px;
+            }
         }
     }
 }

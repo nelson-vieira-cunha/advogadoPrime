@@ -74,29 +74,31 @@ export default function SecureYourSpot({spot}: Props) {
                                 className={`${styles.card} ${!isActive ? styles.card_disabled : ''}`} 
                                 key={index}
                             >
-                                <div className={styles.title_container}>
-                                    <small>Lote 0{item.batch}</small>
+                                <div className={styles.card_container}>
+                                    <div className={styles.title_container}>
+                                        <small>Lote 0{item.batch}</small>
 
-                                    {isActive ? (
-                                        <h3 className={styles.title}>Até dia {formatDate(item.endedAt)}</h3>
-                                    ) : (
-                                        <>
-                                            {isUpcoming ? (
-                                                <h3 className={styles.title}>Inicia em {formatDate(item.startedAt)}</h3>
-                                            ) : (
-                                                <h3 className={styles.title}>Esgotado</h3>
-                                            )}
-                                        </>
-                                    )}
+                                        {isActive ? (
+                                            <h3 className={styles.title}>Até dia {formatDate(item.endedAt)}</h3>
+                                        ) : (
+                                            <>
+                                                {isUpcoming ? (
+                                                    <h3 className={styles.title}>Inicia em {formatDate(item.startedAt)}</h3>
+                                                ) : (
+                                                    <h3 className={styles.title}>Esgotado</h3>
+                                                )}
+                                            </>
+                                        )}
 
-                                </div>
+                                    </div>
 
-                                <div className={styles.price_container}>
-                                    <small className={styles.old_price}>de {formatCurrency(item.oldPrice)}</small>
-                                    <span className={styles.promotion_price}>
-                                        <small>por</small> {formatCurrency(item.promotionPrice)}
-                                    </span>
-                                    <span className={styles.installment}>em até 12x R$ 75,00</span>
+                                    <div className={styles.price_container}>
+                                        <small className={styles.old_price}>de {formatCurrency(item.oldPrice)}</small>
+                                        <span className={styles.promotion_price}>
+                                            <small>por</small> {formatCurrency(item.promotionPrice)}
+                                        </span>
+                                        <span className={styles.installment}>em até 12x R$ 75,00</span>
+                                    </div>
                                 </div>
 
                                 {isActive ? (
