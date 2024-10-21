@@ -1,3 +1,4 @@
+import { Batch, useBatch } from "@/context/BatchsContext";
 import { formatCurrency } from "@/util/currency";
 import { RefObject } from "react";
 import Button from "../ui/button";
@@ -7,35 +8,9 @@ type Props = {
     spot: RefObject<HTMLDivElement>
 }
 
-
 export default function SecureYourSpot({spot}: Props) {
 
-    const items = [
-        {
-            batch: 1,
-            startedAt: '2024-10-10 00:00:00',
-            endedAt: '2024-10-25 00:00:00',
-            oldPrice: 600,
-            promotionPrice: 600,
-            url: 'https://www.cers.com.br/curso/curso-trt-se-analista-judiciario',
-        },
-        {
-            batch: 2,
-            startedAt: '2024-10-26 00:00:00',
-            endedAt: '2024-11-01 00:00:00',
-            oldPrice: 680,
-            promotionPrice: 680,
-            url: 'https://www.cers.com.br/curso/curso-trt-se-analista-judiciario',
-        },
-        {
-            batch: 3,
-            startedAt: '2024-11-01 00:00:00',
-            endedAt: '2024-11-05 00:00:00',
-            oldPrice: 800,
-            promotionPrice: 800,
-            url: 'https://www.cers.com.br/curso/curso-trt-se-analista-judiciario',
-        },
-    ]
+    const { batchs } = useBatch()
 
     const formatDate = (dateStr: string) => {
         const date = new Date(dateStr);
@@ -65,7 +40,7 @@ export default function SecureYourSpot({spot}: Props) {
                 <h2 className="text-center">Garanta já sua vaga</h2>
                 
                 <ul className={styles.cards_list}>
-                    {items.map((item, index) => {
+                    {batchs?.map((item: Batch, index: number) => {
                         const isActive = isDateInRange(item.startedAt, item.endedAt);
                         const isUpcoming = isDateUpcoming(item.startedAt);
 

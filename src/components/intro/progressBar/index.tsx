@@ -1,15 +1,9 @@
 'use client'
 
-// CSS
+import { useBatch } from '@/context/BatchsContext'
+import { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 
-/*
-    progressType    : [ interval, percent ]
-    headerProgress  : boolean para mostrar ou não a barra de progresso
-    headerTitle     : Título que deve aparecer na barra de progresso
-    actualProgress  : valor atual do progresso
-    maxProgress     : valor total do progresso
-*/
 type ProgressBar = {
     className?: string
     actualProgress?: number
@@ -19,10 +13,11 @@ type ProgressBar = {
 
 export default function ProgressBar({
     className,
-    batch,
     actualProgress,
     maxProgress
 }: Partial<ProgressBar>) {
+
+    const { batchs } = useBatch()
 
     const calculateProgress = () => {
         if (actualProgress && maxProgress) {
@@ -35,24 +30,31 @@ export default function ProgressBar({
         return actualProgress
     }
 
-    const getDate = (batch: number | undefined) => {
-        switch (batch) {
-        case 1:
-            return '25 de outubro'
-        case 2:
-            return '26 de outubro'
-        case 3:
-            return '01 de novembro'
-        default:
-            break
-        }
-    }
+    const getCurrentBatch = () => {
+        const currentDate = new Date();
+        
+        return batchs.find(batch => {
+          const startDate = new Date(batch.startedAt);
+          const endDate = new Date(batch.endedAt);
+          return currentDate >= startDate && currentDate <= endDate;
+        }) || batchs[0]; // Retorna o primeiro lote caso nenhuma data corresponda
+      };
+
+      const [currentBatch, setCurrentBatch] = useState(getCurrentBatch());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBatch(getCurrentBatch());
+    }, 1000 * 60 * 60); // Verifica a cada hora
+
+    return () => clearInterval(interval);
+  }, []);
 
     return (
         <div className={`${styles.progress_container} ${className}`}>
             <div className={styles.progress_header}>
                 <span>
-                    {batch} lote até dia {getDate(batch)}
+                {currentBatch.batch} lote até dia {new Date(currentBatch.endedAt).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long' })}
                 </span>
                 <span>{calculateProgress()}% das vagas preenchidas</span>
             </div>

@@ -5,6 +5,7 @@ import "@/styles/styles.scss";
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
+import { BatchProvider } from "@/context/BatchsContext";
 import { Inter } from "next/font/google";
 const inter = Inter({ weight: ["300", "400", "500", "700"], subsets: ["latin"] })
 
@@ -51,19 +52,21 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="pt-BR">
-            <head>
-                <script
-                key="structured-data"
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(schema),
-                }}
-                />
-            </head>
-            <body className={`${inter.className}`}>
-                {children}
-            </body>
-        </html>
+        <BatchProvider>
+            <html lang="pt-BR">
+                <head>
+                    <script
+                    key="structured-data"
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(schema),
+                    }}
+                    />
+                </head>
+                <body className={`${inter.className}`}>
+                    {children}
+                </body>
+            </html>
+        </BatchProvider>
     )
 }
