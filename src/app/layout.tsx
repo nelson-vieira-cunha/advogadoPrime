@@ -6,17 +6,19 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
 import { BatchProvider } from "@/context/BatchsContext";
-import { Inter } from "next/font/google";
+import { Inter, Rubik } from "next/font/google";
+
 const inter = Inter({ weight: ["300", "400", "500", "700"], subsets: ["latin"] })
+const rubik = Rubik({weight: ["300", "400", "500", "700"], subsets: ['latin'], variable: '--font-roboto' })
 
 export const metadata: Metadata = {
     title: "Advogado Prime",
-    description: "Um evento premium e transformador, organizado pelo renomado Professor Renato Saraiva, que te ensinará a produzir conteúdo em vídeo para atrair uma audiência qualificada e construir autoridade no mercado jurídico."
+    description: "Participe do evento que vai destravar sua advocacia e acelerar seu sucesso! Com o Professor Renato Saraiva e seus convidados, você vai aprender as estratégias comprovadas para dominar o mercado jurídico, se posicionar como autoridade nas redes sociais e se destacar como um Advogado Prime – respeitado, valorizado e reconhecido."
 }
 
 const urlBase = 'https://www.exemplo.com.br';
 const siteTitle = 'Advogado Prime';
-const description = 'Um evento premium e transformador, organizado pelo renomado Professor Renato Saraiva, que te ensinará a produzir conteúdo em vídeo para atrair uma audiência qualificada e construir autoridade no mercado jurídico.';
+const description = 'Participe do evento que vai destravar sua advocacia e acelerar seu sucesso! Com o Professor Renato Saraiva e seus convidados, você vai aprender as estratégias comprovadas para dominar o mercado jurídico, se posicionar como autoridade nas redes sociais e se destacar como um Advogado Prime – respeitado, valorizado e reconhecido.';
 const headline = 'Workshop Imersivo: Destravando sua Advocacia, Como se Tornar um Advogado Prime';
 
 const org = {
@@ -63,7 +65,7 @@ export default function RootLayout({
                     }}
                     />
                 </head>
-                <body className={`${inter.className}`}>
+                <body className={`${rubik.variable} ${inter.className}`}>
                     {children}
                 </body>
             </html>

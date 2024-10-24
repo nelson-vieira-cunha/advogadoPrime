@@ -10,6 +10,7 @@
     position: relative;
     background: linear-gradient(135deg,  #1a192a 25%,#282553 100%);
     top: -170px;
+    margin-bottom: -50px;
     z-index: 3;
 
     .container{
@@ -29,12 +30,14 @@
         }
     }
     .content{
-        max-width: 450px;
+        max-width: 519px;
         @media(max-width: 1024px){
             margin: auto;
         }
         h2{
             margin-bottom: 24px;
+            font-size: 24px;
+            line-height: 150%;
         }
         p{
             margin-bottom: 16px;
@@ -49,7 +52,6 @@
         }
     }
     .video{
-        cursor: pointer;
         position: relative;
         transform: scale(1);
         transition: all 250ms ease;
@@ -62,24 +64,7 @@
         .cover{
             width: 100%;
             height: auto;
-        }
-        .play{
-            transition: all 500ms ease;
-            transform: scale(1);
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            margin: auto;
-            transform: translateY(-50%);
-        }
-        &:hover{
-            transform: scale(1.02);
-            .play{
-                transition: all 500ms ease;
-                top: 52%;
-                transform: scale(1.2) translateY(-50%);
-            }
+            border-radius: 8px;
         }
     }
 }

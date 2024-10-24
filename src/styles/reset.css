@@ -132,7 +132,8 @@ table {
     border-spacing: 0;
 }
 p{
-    line-height: 25px
+    line-height: 25px;
+    font-weight: 300;
 }
 .slick-slider{
     padding: 0 40px

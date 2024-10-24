@@ -6,6 +6,7 @@ import Intro from "@/components/intro";
 import Questions from "@/components/questions";
 import Record from "@/components/record";
 import SecureYourSpot from "@/components/secure-your-spot";
+import StudentsFeedback from "@/components/students-feedback";
 import StudentsOpinion from "@/components/students-opinion";
 import { useRef, useState } from "react";
 import ModalVideo from "react-modal-video";
@@ -19,19 +20,22 @@ export default function Home() {
 
   return (
     <main>
-      <Intro spot={spot} />
-      <Content />
-      <About spot={spot} />
-      <Record 
+      <Intro 
         spot={spot}
         setYouTubeId={setYouTubeId} 
         setOpen={setOpen} 
       />
+      <Content />
+      <About spot={spot} />
+      <Record 
+        spot={spot}
+      />
       <SecureYourSpot spot={spot} />
       <StudentsOpinion
-        setYouTubeId={setYouTubeId} 
-        setOpen={setOpen} 
+        // setYouTubeId={setYouTubeId} 
+        // setOpen={setOpen} 
       />
+      <StudentsFeedback />
       <Questions />
       <ModalVideo
         channel="youtube"

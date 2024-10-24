@@ -1,0 +1,29 @@
+@import '@/styles/variables';
+
+.content{
+    padding-bottom: 96px;
+    h2{
+        margin-bottom: 48px;
+    }
+}
+.feedback_list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    @media(max-width: 1024px){
+        grid-template-columns: 1fr;
+    }
+    .feedback_item{
+        max-width: 590px;
+        margin: auto;
+        border-top-left-radius: 32px;
+        border-bottom-right-radius: 32px;
+        overflow: hidden;
+        border: 3px solid #2F2D4D;
+        display: flex;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}

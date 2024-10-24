@@ -13,22 +13,44 @@ type ProgressBar = {
 
 export default function ProgressBar({
     className,
-    actualProgress,
-    maxProgress
+    // actualProgress,
+    // maxProgress
 }: Partial<ProgressBar>) {
 
     const { batchs } = useBatch()
+    const [totalVagas, setTotalVagas] = useState(184);
+    const [vagasPreenchidas, setVagasPreenchidas] = useState(0);
+    const [progress, setProgress] = useState(52);
+  
+//   const fetchTotalVagas = async () => {
+//     try {
+//       const response = await fetch('/api/vagas');
+//       const data = await response.json();
+//       setTotalVagas(data.totalVagas);
+//     } catch (error) {
+//       console.error('Erro ao buscar total de vagas:', error);
+//     }
+//   };
 
-    const calculateProgress = () => {
-        if (actualProgress && maxProgress) {
-            let percent = (actualProgress / maxProgress) * 100
-            if (percent > 100) {
-                percent = 100
-            }
-            return percent.toFixed(0)
-        }
-        return actualProgress
+  // Calcula o progresso baseado nas vagas preenchidas
+  const calculateProgress = (preenchidas: number) => {
+    const initialProgress = 52;
+    const maxProgress = 100;
+
+    if (totalVagas > 0) {
+        return Math.floor(initialProgress + ((preenchidas / totalVagas) * (maxProgress - initialProgress)));
     }
+
+    return maxProgress;
+  };
+
+//   useEffect(() => {
+//     fetchTotalVagas(); // Busca total de vagas ao montar o componente
+//   }, []);
+
+  useEffect(() => {
+    setProgress(calculateProgress(vagasPreenchidas)); // Atualiza o progresso quando vagasPreenchidas ou totalVagas muda
+  }, [vagasPreenchidas, totalVagas]);
 
     const getCurrentBatch = () => {
         const currentDate = new Date();
@@ -37,7 +59,7 @@ export default function ProgressBar({
           const startDate = new Date(batch.startedAt);
           const endDate = new Date(batch.endedAt);
           return currentDate >= startDate && currentDate <= endDate;
-        }) || batchs[0]; // Retorna o primeiro lote caso nenhuma data corresponda
+        }) || batchs[0];
       };
 
       const [currentBatch, setCurrentBatch] = useState(getCurrentBatch());
@@ -45,7 +67,7 @@ export default function ProgressBar({
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBatch(getCurrentBatch());
-    }, 1000 * 60 * 60); // Verifica a cada hora
+    }, 1000 * 60 * 60);
 
     return () => clearInterval(interval);
   }, []);
@@ -56,14 +78,14 @@ export default function ProgressBar({
                 <span>
                 {currentBatch.batch} lote até dia {new Date(currentBatch.endedAt).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long' })}
                 </span>
-                <span>{calculateProgress()}% das vagas preenchidas</span>
+                <span>{progress}% das vagas preenchidas</span>
             </div>
 
             <div className={`${styles.progress_bar} progress-bar`}>
                 <span className={`${styles.progress} progress`}>
                     <style jsx>{`
                         .progress {
-                            width: ${calculateProgress()}%;
+                            width: ${progress}%;
                         }
                     `}</style>
                 </span>

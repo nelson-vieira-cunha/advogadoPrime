@@ -1,10 +1,13 @@
 @import '@/styles/variables';
 
 .about{
-    padding: 96px 0;
     position: relative;
     min-height: 915px;
     display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 240px;
+    box-sizing: border-box;
     @media(max-width: 1024px){
         min-height: 500px;
     }
@@ -27,15 +30,18 @@
         position: relative;
         z-index: 2;
         display: flex;
-        justify-content: flex-end;
-        top: -90px;
+        align-items: flex-end;
+        justify-content: center;
+        margin: inherit;
+        // top: -90px;
         @media(max-width: 1024px){
             // justify-content: center;
             // text-align: center;
         }
     }
     .content{
-        max-width: 490px;
+        max-width: 882px;
+        text-align: center;
         h2{
             margin-bottom: 24px;
         }
@@ -44,6 +50,7 @@
             color: $color-ice-white;
         }
         .btn{
+            margin: auto;
             margin-top: 24px;
             @media(max-width: 1024px){
                 // margin: auto;

@@ -5,12 +5,13 @@ export default function Questions() {
 
     return (
         <section className={`${styles.content} container`}>
-                <h2>
+                <h2 className={styles.title}>Contato para mais informações</h2>
+                <p>
                     Consulte sobre valores especiais para <br />
                     casais, duplas e grupos.
-                </h2>
+                </p>
 
-                <h2 className={styles.title}>Ficou com alguma dúvida?</h2>
+                <h3>Ficou com alguma dúvida?</h3>
                 <p>Envie uma mensagem para nós no WhatsApp</p>
                 <Button url="#" className={styles.btn}>Enviar mensagem</Button>
         </section>

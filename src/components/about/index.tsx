@@ -14,9 +14,8 @@ export default function About({spot}: Props) {
             <div className={`container ${styles.container}`}>
 
                 <div className={styles.content}>
-                    <h2>Sobre o Professor</h2>
-                    <p>O evento é organizado pelo Professor Renato Saraiva, referência em educação jurídica no Brasil, que agora lidera o Grave Direito para ajudar advogados a conquistarem seu espaço no mundo digital.</p>
-                    <p>Garanta já sua vaga e aprenda a dominar a produção de vídeos para transformar sua advocacia!</p>
+                    <h2>Sobre os Idealizadores</h2>
+                    <p>O evento é organizado pelo Professor Renato Saraiva, referência em educação jurídica no Brasil, e conta com a visão estratégica de Jeff daCruz, especialista em audiovisual e responsável por transformar a maneira como advogados se posicionam no mundo digital. Além disso, diversos grandes nomes do conteúdo jurídico participarão para compartilhar suas melhores estratégias e experiências.</p>
                     <Button className={styles.btn} onClick={() => ScrollTo(spot)}>Garanta sua vaga agora</Button>
                 </div>
 
