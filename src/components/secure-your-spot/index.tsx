@@ -51,7 +51,7 @@ export default function SecureYourSpot({spot}: Props) {
                             >
                                 <div className={styles.card_container}>
                                     <div className={styles.title_container}>
-                                        <small>Lote 0{item.batch}</small>
+                                        <small>Lote 0{item.batch} {(!isUpcoming && !isActive) && ' - esgotado'}</small>
 
                                         {isActive ? (
                                             <h3 className={styles.title}>Até dia {formatDate(item.endedAt)}</h3>
@@ -60,7 +60,8 @@ export default function SecureYourSpot({spot}: Props) {
                                                 {isUpcoming ? (
                                                     <h3 className={styles.title}>Inicia em {formatDate(item.startedAt)}</h3>
                                                 ) : (
-                                                    <h3 className={styles.title}>Esgotado</h3>
+                                                    <h3 className={styles.title}>{formatDate(item.endedAt)}</h3>
+                                                    
                                                 )}
                                             </>
                                         )}
@@ -75,20 +76,23 @@ export default function SecureYourSpot({spot}: Props) {
                                         <span className={styles.installment}>em até 12x R$ 75,00</span>
                                     </div>
                                 </div>
+                                
+                                <div className={styles.btn_container}>
+                                    {isActive ? (
+                                        <Button className={styles.btn} target="_blank" url={item.url}>
+                                            {isActive ? 'Compre com desconto' : 'Promoção encerrada'}
+                                        </Button>
+                                    ) : (
+                                        <>
+                                            {isUpcoming ? (
+                                                <Button className={styles.btn}>Em breve</Button>
+                                            ) : (
+                                                <Button className={styles.btn}>Esgotado</Button>
+                                            )}
+                                        </>
+                                    )}
+                                </div>
 
-                                {isActive ? (
-                                    <Button target="_blank" url={item.url}>
-                                        {isActive ? 'Compre com desconto' : 'Promoção encerrada'}
-                                    </Button>
-                                ) : (
-                                    <>
-                                        {isUpcoming ? (
-                                            <Button>Em breve</Button>
-                                        ) : (
-                                            <Button>Esgotado</Button>
-                                        )}
-                                    </>
-                                )}
                             </li>
                         );
                     })}

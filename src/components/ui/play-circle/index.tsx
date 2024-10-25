@@ -1,11 +1,12 @@
 import Image from 'next/image'
 
 type PlayIcon = {
-    className: string
+    className: string,
+    large: boolean
 }
 
 export default function PlayIcon({
-    className
+    className,
 }: Partial<PlayIcon>) {
 
     return (

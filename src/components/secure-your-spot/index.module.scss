@@ -7,16 +7,21 @@
     }
 }
 .cards_list{
-    display: flex;
-    // grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     gap: 35px;
     margin: auto;
     @media(max-width: 1024px){
         flex-wrap: wrap;
     }
     .card{
+        box-sizing: border-box;
         display: flex;
+        width: 100%;
         flex-direction: column;
         gap: 1.5rem;
         border: 3px solid #2F2D4D;
@@ -25,7 +30,10 @@
         padding: 48px 40px;
     }
     .card_container{
-        flex: 1
+        flex: 1;
+        max-width: 355px;
+        width: 100%;
+        margin: auto;
     }
     .card_disabled{
         opacity: 0.4;
@@ -60,8 +68,16 @@
             font-weight: 300;
         }
     }
+    .btn_container{
+        max-width: 295px;
+        width: 100%;
+        margin: auto;
+    }
     .installment{
         font-weight: 300;
         font-size: 14px;
     }
+}
+.btn{
+    width: 100%!important;
 }

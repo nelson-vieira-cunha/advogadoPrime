@@ -17,10 +17,12 @@ export default function ProgressBar({
     // maxProgress
 }: Partial<ProgressBar>) {
 
+  const INITIAL_PROGRESS = 15
+
     const { batchs } = useBatch()
-    const [totalVagas, setTotalVagas] = useState(184);
+    const [totalVagas, setTotalVagas] = useState(50);
     const [vagasPreenchidas, setVagasPreenchidas] = useState(0);
-    const [progress, setProgress] = useState(52);
+    const [progress, setProgress] = useState(INITIAL_PROGRESS);
   
 //   const fetchTotalVagas = async () => {
 //     try {
@@ -34,7 +36,7 @@ export default function ProgressBar({
 
   // Calcula o progresso baseado nas vagas preenchidas
   const calculateProgress = (preenchidas: number) => {
-    const initialProgress = 52;
+    const initialProgress = INITIAL_PROGRESS;
     const maxProgress = 100;
 
     if (totalVagas > 0) {

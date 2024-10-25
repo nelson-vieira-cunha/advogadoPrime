@@ -31,7 +31,14 @@ export default function Player({
                     className={styles.card}
                     onClick={() => handlePlay()}
                 >
-                    <PlayIcon className={styles.play} />
+                    {/* <PlayIcon className={styles.play} /> */}
+                    <Image
+                        className={styles.play}
+                        width={146}
+                        height={137}
+                        src="/play-circle-large.svg"
+                        alt='ícone de player de vídeo'
+                    />
                     <Image
                         className={styles.video_cover}
                         width={384}
