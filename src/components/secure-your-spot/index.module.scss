@@ -81,3 +81,19 @@
 .btn{
     width: 100%!important;
 }
+.card_list_items{
+    max-width: 590px;
+    margin: auto;
+    line-height: 150%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .icon{
+        margin-right: .5rem;
+    }
+    .btn{
+        width: 100%;
+    }
+}

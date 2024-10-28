@@ -1,5 +1,6 @@
 import { Batch, useBatch } from "@/context/BatchsContext";
 import { formatCurrency } from "@/util/currency";
+import Image from "next/image";
 import { RefObject } from "react";
 import Button from "../ui/button";
 import styles from "./index.module.scss";
@@ -32,6 +33,21 @@ export default function SecureYourSpot({spot}: Props) {
         const startDate = new Date(startedAt);
         return now < startDate;
     };
+
+    const cardListItems = [
+        "Dia 06/10 das 18h as 22h",
+        "Dia 07/10 das 08h as 18h",
+        "Adquira o ingresso até o dia 16/10 com desconto de R$649.00 por R$600.00 a vista no cartão ou pix.",
+        "Curso Presencial em Caruaru - PE.",
+        "1 noite de networking.",
+        "1 dia inteiro de imersão com coffee break.",
+        "Empreendedorismo Jurídico.",
+        "Instagram para advogados.",
+        "Produção de Vídeos com o Celular.",
+        "Vídeos que Vendem sua Advocacia.",
+        "Automação e Inteligência Artificial.",
+        "No Auditório do Shopping Caruaru."
+    ]
 
     return (
         <section ref={spot} className={styles.content}>
@@ -69,18 +85,36 @@ export default function SecureYourSpot({spot}: Props) {
                                     </div>
 
                                     <div className={styles.price_container}>
-                                        <small className={styles.old_price}>de {formatCurrency(item.oldPrice)}</small>
+                                        {/* <small className={styles.old_price}>de {formatCurrency(item.oldPrice)}</small> */}
                                         <span className={styles.promotion_price}>
-                                            <small>por</small> {formatCurrency(item.promotionPrice)}
+                                            {/*<small>por</small> */}{formatCurrency(item.promotionPrice)}
                                         </span>
-                                        <span className={styles.installment}>em até 12x R$ 75,00</span>
+                                        {isActive && <span className={styles.installment}>ou 10x {formatCurrency(item.promotionPrice / 10)}</span>}
+                                        
                                     </div>
+
                                 </div>
+                                {isActive ? (
+                                    <ul className={styles.card_list_items}>
+                                        {cardListItems.map((item, index) => (
+                                            <li key={index}>
+                                                <Image
+                                                className={styles.icon}
+                                                    width={16}
+                                                    height={11}
+                                                    src="/check-icon.svg"
+                                                    alt="Ícone de check"
+                                                />
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                ) : null}
                                 
                                 <div className={styles.btn_container}>
                                     {isActive ? (
                                         <Button className={styles.btn} target="_blank" url={item.url}>
-                                            {isActive ? 'Compre com desconto' : 'Promoção encerrada'}
+                                            {isActive ? 'Comprar com desconto' : 'Promoção encerrada'}
                                         </Button>
                                     ) : (
                                         <>
