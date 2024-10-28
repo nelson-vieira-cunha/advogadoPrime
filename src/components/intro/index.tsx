@@ -14,10 +14,19 @@ type Props = {
     spot: RefObject<HTMLDivElement>
 }
 
+interface ProgressBar {
+    className?: string;
+    actualProgress?: number;
+    maxProgress?: number;
+    batch?: number;
+    // adicione outras propriedades que você precisa
+}
+
+
 export default function Intro({
     spot,
     setYouTubeId,
-    setOpen
+    setOpen,
 }: Props) {
 
     useEffect(() => {
