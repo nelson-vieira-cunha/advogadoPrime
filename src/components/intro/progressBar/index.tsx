@@ -4,6 +4,9 @@ import styles from './index.module.scss'
 
 type ProgressBar = {
     className?: string
+    actualProgress?: number
+    maxProgress?: number
+    batch?: number
 }
 
 export default function ProgressBar({ className }: Partial<ProgressBar>) {
