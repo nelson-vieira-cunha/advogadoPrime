@@ -46,7 +46,7 @@ export default function SecureYourSpot({spot}: Props) {
         "Produção de Vídeos com o Celular.",
         "Vídeos que Vendem sua Advocacia.",
         "Automação e Inteligência Artificial.",
-        "No Auditório do Shopping Caruaru."
+        "Instituto CME, Rua Visconde de Inhaúma, 1683, Maurício de Nassau, Caruaru, PE"
     ]
 
     return (

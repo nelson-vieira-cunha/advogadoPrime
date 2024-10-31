@@ -51,7 +51,7 @@ export default function Intro({
                         className={styles.video_img}
                         width={556}
                         height={402}
-                        src="/header_landpage.png"
+                        src="/header_landpage.jpg"
                         alt="Imagem da equipe reunida."
                     />
 
@@ -78,9 +78,9 @@ export default function Intro({
                 <div className={styles.content}>
                     <div>
                         <h1>
-                            <span>Workshop Imersivo:</span> <br />
+                            <span>Workshop imersivo presencial </span> <br />
                             Destravando sua Advocacia, <br />
-                            Como se Tornar um Advogado Prime
+                            Como se Tornar um Advogado Prime Caruaru-PE
                         </h1>
                         <p className={styles.description}>Participe do evento que vai destravar sua advocacia e acelerar seu sucesso!<br />
                         Com o Professor Renato Saraiva e seus convidados, você vai aprender as estratégias<br />

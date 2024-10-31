@@ -12,14 +12,14 @@ const inter = Inter({ weight: ["300", "400", "500", "700"], subsets: ["latin"] }
 const rubik = Rubik({weight: ["300", "400", "500", "700"], subsets: ['latin'], variable: '--font-roboto' })
 
 export const metadata: Metadata = {
-    title: "Advogado Prime",
+    title: "Workshop imersivo presencial",
     description: "Participe do evento que vai destravar sua advocacia e acelerar seu sucesso! Com o Professor Renato Saraiva e seus convidados, você vai aprender as estratégias comprovadas para dominar o mercado jurídico, se posicionar como autoridade nas redes sociais e se destacar como um Advogado Prime – respeitado, valorizado e reconhecido."
 }
 
 const urlBase = 'https://www.exemplo.com.br';
-const siteTitle = 'Advogado Prime';
+const siteTitle = 'Workshop imersivo presencial';
 const description = 'Participe do evento que vai destravar sua advocacia e acelerar seu sucesso! Com o Professor Renato Saraiva e seus convidados, você vai aprender as estratégias comprovadas para dominar o mercado jurídico, se posicionar como autoridade nas redes sociais e se destacar como um Advogado Prime – respeitado, valorizado e reconhecido.';
-const headline = 'Workshop Imersivo: Destravando sua Advocacia, Como se Tornar um Advogado Prime';
+const headline = 'Workshop imersivo presencial: Destravando sua Advocacia, Como se Tornar um Advogado Prime';
 
 const org = {
     '@context': 'https://schema.org',

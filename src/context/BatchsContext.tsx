@@ -26,7 +26,7 @@ export const BatchProvider = ({ children }: { children: ReactNode }) => {
         endedAt: '2024-11-12 23:59:00',
         oldPrice: 480,
         promotionPrice: 480,
-        url: 'https://www.cers.com.br/curso/curso-trt-se-analista-judiciario',
+        url: 'https://conteudolegal.disce.com.br/pay/destravando-sua-advocacia-como-se-tornar-um-advogado-prime',
     },
     {
         batch: 2,
@@ -34,7 +34,7 @@ export const BatchProvider = ({ children }: { children: ReactNode }) => {
         endedAt: '2024-11-30 23:59:00',
         oldPrice: 570,
         promotionPrice: 570,
-        url: 'https://www.cers.com.br/curso/curso-trt-se-analista-judiciario',
+        url: 'https://conteudolegal.disce.com.br/pay/destravando-sua-advocacia-como-se-tornar-um-advogado-prime',
     },
     {
         batch: 3,
@@ -42,7 +42,7 @@ export const BatchProvider = ({ children }: { children: ReactNode }) => {
         endedAt: '2024-12-30 00:00:00',
         oldPrice: 620,
         promotionPrice: 620,
-        url: 'https://www.cers.com.br/curso/curso-trt-se-analista-judiciario',
+        url: 'https://conteudolegal.disce.com.br/pay/destravando-sua-advocacia-como-se-tornar-um-advogado-prime',
     },
   ]
 
