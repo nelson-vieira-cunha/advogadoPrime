@@ -1,26 +1,18 @@
 'use client'
 
 import ScrollTo from "@/util/scrollTo.util";
-import Image from "next/image";
 import { RefObject, useEffect } from "react";
 import Button from "../ui/button";
-import PlayIcon from "../ui/play-circle";
+import Player from "../ui/player";
 import styles from "./index.module.scss";
 import ProgressBar from "./progressBar";
 
 type Props = {
-    setYouTubeId: (id: string) => void
-    setOpen: (value: boolean) => void
     spot: RefObject<HTMLDivElement>
 }
 
-
-
-
 export default function Intro({
-    spot,
-    setYouTubeId,
-    setOpen,
+    spot
 }: Props) {
 
     useEffect(() => {
@@ -146,24 +138,30 @@ export default function Intro({
                 <div className={`container`}>
 
                     <div className={styles.video_container}>
-                        
 
-                        <div
-                            className={styles.video}
-                            onClick={() => {
-                                setYouTubeId('KC3OLb0ofME')
-                                setOpen(true)
-                            }}
-                        >
-                            <PlayIcon className={styles.play} />
-                            <Image
-                                className={styles.cover}
-                                width={556}
-                                height={315}
-                                src="/video-cover-record.jpg"
-                                alt="Imagem da equipe reunida."
-                            />
-                        </div>
+                    <Player youtubeItem={{
+                        id: 1,
+                        title: 'Grave Direito: Transforme Sua Advocacia e Conquiste o Mundo Digital!',
+                        youTubeId: 'KC3OLb0ofME',
+                        cover: '/video-cover-record.jpg'
+                    }} />
+                        
+                    {/* <div
+                        className={styles.video}
+                        onClick={() => {
+                            setYouTubeId('KC3OLb0ofME')
+                            setOpen(true)
+                        }}
+                    >
+                        <PlayIcon className={styles.play} />
+                        <Image
+                            className={styles.cover}
+                            width={556}
+                            height={315}
+                            src="/video-cover-record.jpg"
+                            alt="Imagem da equipe reunida."
+                        />
+                    </div> */}
 
                     </div>
                     </div>
