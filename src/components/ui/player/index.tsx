@@ -4,14 +4,15 @@ import PlayIcon from '../play-circle';
 import styles from "./index.module.scss";
 
 type PlayIcon = {
-    className: string
-    youtubeItem: YouTubeItem
+    className?: string
+    youtubeItem?: YouTubeItem
 }
 
 type YouTubeItem = {
     id: number,
-    title: string | undefined,
+    title?: string | undefined,
     youTubeId: string
+    cover?: string | undefined
 }
 
 export default function Player({
@@ -43,7 +44,7 @@ export default function Player({
                         className={styles.video_cover}
                         width={384}
                         height={216}
-                        src={`http://i.ytimg.com/vi/${youtubeItem?.youTubeId}/maxresdefault.jpg`}
+                        src={youtubeItem?.cover ? youtubeItem?.cover : `http://i.ytimg.com/vi/${youtubeItem?.youTubeId}/maxresdefault.jpg`}
                         alt={youtubeItem?.title || "Video thumbnail"}
                     />
                 </div>
