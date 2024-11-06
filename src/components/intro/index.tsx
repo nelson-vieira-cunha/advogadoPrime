@@ -136,29 +136,12 @@ export default function Intro({
 
                     <div className={styles.video_container}>
 
-                    <Player youtubeItem={{
-                        id: 1,
-                        title: 'Grave Direito: Transforme Sua Advocacia e Conquiste o Mundo Digital!',
-                        youTubeId: 'KC3OLb0ofME',
-                        cover: '/video-cover-record.jpg'
-                    }} />
-                        
-                    {/* <div
-                        className={styles.video}
-                        onClick={() => {
-                            setYouTubeId('KC3OLb0ofME')
-                            setOpen(true)
-                        }}
-                    >
-                        <PlayIcon className={styles.play} />
-                        <Image
-                            className={styles.cover}
-                            width={556}
-                            height={315}
-                            src="/video-cover-record.jpg"
-                            alt="Imagem da equipe reunida."
-                        />
-                    </div> */}
+                        <Player youtubeItem={{
+                            id: 1,
+                            title: 'Grave Direito: Transforme Sua Advocacia e Conquiste o Mundo Digital!',
+                            youTubeId: '0h5Cbz180T8',
+                            // cover: '/video-cover-record.jpg'
+                        }} />
 
                     </div>
                     </div>
