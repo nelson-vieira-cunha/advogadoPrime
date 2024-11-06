@@ -98,12 +98,12 @@ export default function Intro({
         // </section>
         <>
             <section className={styles.intro}>
-                <div className={`container`}>
+                <div className={`container ${styles.container}`}>
 
                     <div className={styles.content}>
                         <div className={styles.center}>
                             <h1>
-                                <span>Workshop imersivo presencial:</span> <br />
+                                <span>Workshop imersivo presencial:</span><br />
                                 Destravando sua Advocacia<br />
                                 Como se Tornar um Advogado Prime,<br /> Caruaru-PE
                             </h1>

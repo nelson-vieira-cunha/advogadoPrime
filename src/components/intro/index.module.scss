@@ -163,37 +163,51 @@
 
 
 .intro {
-    min-height: calc(100vh - 192px);
+    // min-height: calc(100vh - 192px);
+    // max-height: 1080px;
+    // display: flex;
+    // gap: 2rem;
+    // position: relative;
+    // height: 100%;
+    // padding: 96px 0;
+    min-height: 850px;
     max-height: 1080px;
     display: flex;
     gap: 2rem;
     position: relative;
-    height: 100%;
-    padding: 96px 0;
+    height: 100vh;
+    padding: 0px 0;
+    justify-content: center;
+    padding-bottom: 100px;
 
     @media(max-width: 1280px) {
         padding: 48px 0;
     }
 
     &::after {
-        content: '';
+        // content: '';
+        // width: 100%;
+        // top: 0;
+        // left: 0;
+        // height: 100%;
+        // position: absolute;
+        // background: url(/novo-bg-header.jpg) top right no-repeat;
+        // background-size: contain;
+        // background-position-x: 70%;
+        // z-index: -1;
+
+        content: "";
         width: 100%;
         top: 0;
         left: 0;
         height: 100%;
         position: absolute;
-        background: url(/novo-bg-header.jpg) top right no-repeat;
+        background: #060606 url(/novo-bg-header.jpg) top center no-repeat;
         background-size: contain;
-        background-position-x: 70%;
         z-index: -1;
-
         @media(max-width: 1280px) {
             background-size: cover;
-            background-position-x: 60%;
         // background: url(/novo-bg-header-mobile.jpg) top right no-repeat;
-
-
-            
         }
     }
 
@@ -206,6 +220,17 @@
         z-index: -1;
         position: absolute;
         top: 0;
+        background: linear-gradient(to bottom, rgba(30, 87, 153, 0) 5%, rgba(0, 0, 0, 1) 100%);
+        @media(max-width: 720px) {
+            z-index: 0;
+        }
+    }
+
+    .container{
+        margin: inherit;
+        justify-content: center;
+        align-items: flex-end;
+        display: flex;
     }
 
     .description {
@@ -219,24 +244,32 @@
 .content {
     display: flex;
     flex-direction: column;
-    gap: 96px;
+    gap: 2rem;
     // position: relative;
     position: inherit;
     z-index: 5;
+    width: 100%;
 
-    // .center{
-    //    display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     position: relative;
-    //     bottom: -150px;
-
-    // }
+    .center{
+       display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        text-align: center;
+    }
 
     h1 {
         span {
             font-family: var(--font-roboto);
             font-size: 24px;
+        }
+        font-size: 2.8rem;
+        line-height: 110%;
+        // color: #fff;
+        max-width: 1052px;
+        @media(max-width: 720px) {
+            font-size: 1.7rem;
+            line-height: 125%;
         }
     }
 

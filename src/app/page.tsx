@@ -17,9 +17,7 @@ export default function Home() {
 
   return (
     <main>
-      <Intro 
-        spot={spot}
-      />
+      <Intro spot={spot} />
       <Content />
       <About spot={spot} />
       <Record spot={spot} />
