@@ -42,8 +42,8 @@ export default function Player({
                     />
                     <Image
                         className={styles.video_cover}
-                        width={384}
-                        height={216}
+                        width={1280}
+                        height={720}
                         src={youtubeItem?.cover ? youtubeItem?.cover : `http://i.ytimg.com/vi/${youtubeItem?.youTubeId}/maxresdefault.jpg`}
                         alt={youtubeItem?.title || "Video thumbnail"}
                     />
