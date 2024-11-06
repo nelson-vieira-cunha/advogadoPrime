@@ -101,17 +101,14 @@ export default function Intro({
                 <div className={`container`}>
 
                     <div className={styles.content}>
-                        <div>
+                        <div className={styles.center}>
                             <h1>
                                 <span>Workshop imersivo presencial:</span> <br />
                                 Destravando sua Advocacia<br />
                                 Como se Tornar um Advogado Prime,<br /> Caruaru-PE
                             </h1>
                             <p className={styles.description}>
-                                Participe do evento que vai destravar sua advocacia e acelerar seu sucesso!<br />
-                                Com o Professor Renato Saraiva e seus convidados, você vai aprender as estratégias
-                                comprovadas para dominar o mercado jurídico, se posicionar como autoridade nas redes sociais
-                                e se destacar como um Advogado Prime – respeitado, valorizado e reconhecido.
+                            O evento que vai destravar sua advocacia e acelerar seu sucesso no digital!
                             </p>
                             <Button onClick={() => ScrollTo(spot)}>Garanta sua vaga agora</Button>
                         </div>
