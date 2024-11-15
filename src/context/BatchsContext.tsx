@@ -32,8 +32,8 @@ export const BatchProvider = ({ children }: { children: ReactNode }) => {
         batch: 2,
         startedAt: '2024-11-13 00:00:00',
         endedAt: '2024-11-30 23:59:00',
-        oldPrice: 570,
-        promotionPrice: 570,
+        oldPrice: 480,
+        promotionPrice: 480,
         url: 'https://conteudolegal.disce.com.br/pay/destravando-sua-advocacia-como-se-tornar-um-advogado-prime',
     },
     {
