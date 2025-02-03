@@ -23,7 +23,7 @@ export const BatchProvider = ({ children }: { children: ReactNode }) => {
     {
         batch: 1,
         startedAt: '2024-10-10 00:00:00',
-        endedAt: '2024-11-12 23:59:00',
+        endedAt: '2025-02-07 23:59:00',
         oldPrice: 480,
         promotionPrice: 480,
         url: 'https://conteudolegal.disce.com.br/pay/destravando-sua-advocacia-como-se-tornar-um-advogado-prime',
@@ -31,7 +31,7 @@ export const BatchProvider = ({ children }: { children: ReactNode }) => {
     {
         batch: 2,
         startedAt: '2024-11-13 00:00:00',
-        endedAt: '2024-11-30 23:59:00',
+        endedAt: '2025-02-14 23:59:00',
         oldPrice: 480,
         promotionPrice: 480,
         url: 'https://conteudolegal.disce.com.br/pay/destravando-sua-advocacia-como-se-tornar-um-advogado-prime',
@@ -39,7 +39,7 @@ export const BatchProvider = ({ children }: { children: ReactNode }) => {
     {
         batch: 3,
         startedAt: '2024-12-01 00:00:00',
-        endedAt: '2024-12-30 00:00:00',
+        endedAt: '2025-02-21 00:00:00',
         oldPrice: 620,
         promotionPrice: 620,
         url: 'https://conteudolegal.disce.com.br/pay/destravando-sua-advocacia-como-se-tornar-um-advogado-prime',

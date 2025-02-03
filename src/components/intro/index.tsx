@@ -105,7 +105,7 @@ export default function Intro({
                             <h1>
                                 <span>Workshop imersivo presencial:</span><br />
                                 Destravando sua Advocacia<br />
-                                Como se Tornar um Advogado Prime,<br /> Caruaru-PE
+                                Como se Tornar um Advogado Prime,<br /> Belém-PA
                             </h1>
                             <p className={styles.description}>
                             O evento que vai destravar sua advocacia e acelerar seu sucesso no digital!

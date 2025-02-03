@@ -13,7 +13,7 @@ export default function ProgressBar({ className }: Partial<ProgressBar>) {
     const INITIAL_PROGRESS = 15;
     const FINAL_PROGRESS = 100;
     const START_DATE = new Date('2024-11-01');
-    const END_DATE = new Date('2024-12-30');
+    const END_DATE = new Date('2025-02-21');
 
     const { batchs } = useBatch();
     const [progress, setProgress] = useState(INITIAL_PROGRESS);

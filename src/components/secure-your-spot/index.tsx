@@ -35,10 +35,10 @@ export default function SecureYourSpot({spot}: Props) {
     };
 
     const cardListItems = [
-        "Dia 06/10 das 18h as 22h",
-        "Dia 07/10 das 08h as 18h",
-        "Adquira o ingresso até o dia 16/10 com desconto de R$649.00 por R$600.00 a vista no cartão ou pix.",
-        "Curso Presencial em Caruaru - PE.",
+        "Dia 21/02 das 18h as 22h",
+        "Dia 22/02 das 08h as 18h",
+        "Adquira o ingresso até o dia 21/02 com desconto de R$649.00 por R$600.00 a vista no cartão ou pix.",
+        "Curso Presencial em Belém - Pará.",
         "1 noite de networking.",
         "1 dia inteiro de imersão com coffee break.",
         "Empreendedorismo Jurídico.",
@@ -46,7 +46,7 @@ export default function SecureYourSpot({spot}: Props) {
         "Produção de Vídeos com o Celular.",
         "Vídeos que Vendem sua Advocacia.",
         "Automação e Inteligência Artificial.",
-        "Instituto CME, Rua Visconde de Inhaúma, 1683, Maurício de Nassau, Caruaru, PE"
+        "Cesupa Av. Alcindo Cacela 980. Belém, Pa"
     ]
 
     return (
