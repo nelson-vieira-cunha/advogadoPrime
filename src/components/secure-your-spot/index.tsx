@@ -35,9 +35,9 @@ export default function SecureYourSpot({spot}: Props) {
     };
 
     const cardListItems = [
-        "Dia 21/02 das 18h as 22h",
-        "Dia 22/02 das 08h as 18h",
-        "Adquira o ingresso até o dia 21/02 com desconto de R$649.00 por R$600.00 a vista no cartão ou pix.",
+        "Dia 21/03 das 18h as 22h",
+        "Dia 22/03 das 08h as 18h",
+        "Adquira o ingresso até o dia 21/03 com desconto de R$649.00 por R$600.00 a vista no cartão ou pix.",
         "Curso Presencial em Belém - Pará.",
         "1 noite de networking.",
         "1 dia inteiro de imersão com coffee break.",
